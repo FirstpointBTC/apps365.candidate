@@ -1,6 +1,13 @@
 ## apps-365-candidate
 
-This is where you include your WebPart documentation.
+Test webpart:
+gulp serve
+
+Open 
+https://firstpoint.sharepoint.com/sites/Apps365Intervju/_layouts/15/workbench.aspx
+And add webpart
+apps365candidate
+
 
 ### Building the code
 
@@ -11,16 +18,3 @@ npm i -g gulp
 gulp
 ```
 
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO

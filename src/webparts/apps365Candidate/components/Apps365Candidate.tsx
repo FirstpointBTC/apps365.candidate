@@ -44,16 +44,16 @@ export default class Apps365Candidate extends React.Component<IApps365CandidateP
   private _onRenderCell(item: IShip, index: number | undefined): JSX.Element {
     return (
       <div className={styles.container}>
-        <div className="row">
+        <div className={styles.row}>
           <div className="ms-Grid-col ms-sm12">
             <span className={styles.title}>{item.Title}</span>
           </div>
         </div>
-        <div className={styles.row + " ms-font-s"}>
+        <div className={styles.row + " " +styles.subTitle}>
           <div className={styles.column4}>
             <div>ID: {item.Id}</div>
           </div >
-          <div className={styles.column4}>
+          <div className={[styles.column4,styles.description].join(" ")}>
             <div >Year: {item.DATE_BUILT}</div>
           </div >
           <div className={styles.column4}>

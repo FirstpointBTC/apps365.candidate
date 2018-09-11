@@ -16,11 +16,13 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
     "group": { "default": "Other" },
-    "title": { "default": "apps365candidate" },
+    "title": { "default": "apps365candidates" },
     "description": { "default": "apps365candidate description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "apps365candidate"
+      "description": "apps3456.candidate",
+      "baseUrl": "https://firstpoint.sharepoint.com/sites/Apps365Intervju/",
+      "serverRelativeUrl": "/sites/Apps365Intervju"
     }
   }]
 }

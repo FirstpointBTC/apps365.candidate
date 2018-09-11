@@ -7,7 +7,7 @@ import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
-  PropertyPaneCheckbox
+  PropertyPaneToggle
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'Apps365CandidateWebPartStrings';
@@ -37,32 +37,32 @@ export default class Apps365CandidateWebPart extends BaseClientSideWebPart<IApps
   public render(): void {
     if (this.properties.baseUrl && this.properties.serverRelativeUrl && this.properties.baseUrl.length > 0 && this.properties.serverRelativeUrl.length > 0) {
 
-    const element: React.ReactElement<IApps365CandidateProps> = React.createElement(
-      Apps365Candidate,
-      {
-        description: this.properties.description,
-        wpProps: this.properties
-      }
-    );
-
-    ReactDom.render(element, this.domElement);
-  } else {
-    const element: React.ReactElement<IPlaceholderProps> = React.createElement(
-      Placeholder,
-      {
-        iconName: "Edit",
-        iconText: "Configure this Web Part",
-        description: "You must add required properties before using this web part.",
-        buttonLabel: "Configure",
-        onConfigure: () => {
-          this.context.propertyPane.open();
+      const element: React.ReactElement<IApps365CandidateProps> = React.createElement(
+        Apps365Candidate,
+        {
+          description: this.properties.description,
+          wpProps: this.properties
         }
-      }
-    );
+      );
 
-    ReactDom.render(element, this.domElement);
+      ReactDom.render(element, this.domElement);
+    } else {
+      const element: React.ReactElement<IPlaceholderProps> = React.createElement(
+        Placeholder,
+        {
+          iconName: "Edit",
+          iconText: "Configure this Web Part",
+          description: "You must add required properties before using this web part.",
+          buttonLabel: "Configure",
+          onConfigure: () => {
+            this.context.propertyPane.open();
+          }
+        }
+      );
 
-  }
+      ReactDom.render(element, this.domElement);
+
+    }
   }
 
   protected onDispose(): void {
@@ -94,6 +94,7 @@ export default class Apps365CandidateWebPart extends BaseClientSideWebPart<IApps
                 }),
                 PropertyPaneTextField("serverRelativeUrl", {
                   label: "Web - Server relative url",
+
                   description: "I.e /sites/myfabsite"
                 })
               ]
@@ -101,13 +102,14 @@ export default class Apps365CandidateWebPart extends BaseClientSideWebPart<IApps
             {
               groupName: "Layout settings",
               groupFields: [
-                PropertyPaneCheckbox("useFullBleed", {
-                  text: "Use full bleed"
+                PropertyPaneToggle("useFullBleed", {
+                  label: "Use full width"
                 })
               ]
             }
           ]
         }
       ]
-    };  }
+    };
+  }
 }

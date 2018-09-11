@@ -1,6 +1,6 @@
-## apps-365-candidate
+# apps-365-candidate
 
-Test webpart:
+## Test webpart:
 gulp serve
 
 Open 
@@ -8,8 +8,15 @@ https://firstpoint.sharepoint.com/sites/Apps365Intervju/_layouts/15/workbench.as
 And add webpart
 apps365candidate
 
+Then Configure and add
+Base url:
+https://firstpoint.sharepoint.com/sites/Apps365Intervju/
 
-### Building the code
+Web-server relative url:
+/sites/Apps365Intervju/
+
+
+## Building the code
 
 ```bash
 git clone the repo
